@@ -53,11 +53,17 @@ echo "Time in australia for 5 days ".$e->futureTime."<br>";
 <hr>
 <p>Next class exercise</p>
 <?php
-$p = new punkt();
+require_once ("punkt.php");
+require_once ("punkt2d.php");
+$p = new punkt(40);
 
 echo $p->x.'<br>';
 
-require_once ("punkt.php");
+$p2 = new punkt2d(10,50);
+
+echo $p2->x.'<br>';
+echo $p2->y.'<br>';
+
 
 
 ?>
