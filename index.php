@@ -75,7 +75,53 @@ echo $p2->getZ().'<br>';
 </p>
 <br>
 <?php
-new Animal();
+require_once ("dog.php");
+
+$p = new Dog();
+$p->eat("meat");
+echo "<br>";
+$p->eat("czekolada");
+
+?>
+<hr>
+<p> Interfejsy <br></p>
+<?php
+//----------------------------------Interface ---------------------------------------------------
+echo Ekran::KOLOR."<br";
+interface Ekran { // interfejs to pewna reguła
+  const KOLOR = "szary";
+ function Wyswietl(); // w funkcjach abstrakcyjnych nie robię ciała funkcji
+}
+interface PrzyciskiInterface {
+ function wlacz();
+}
+class monitorA implements Ekran, PrzyciskiInterface {
+  function Wyswietl() {
+
+  }
+  function wlacz()
+  {
+    // TODO: Implement wlacz() method.
+  }
+}
+class monitorB implements Ekran, PrzyciskiInterface {
+  function Wyswietl() {
+
+  }
+  function wlacz()
+  {
+    // TODO: Implement wlacz() method.
+  }}
+?>
+<hr>
+<p>Statyczne funkcje<br></p>
+<?php
+require_once ("permissionInterface.php");
+require_once ("guest.php");
+require_once ("user.php");
+
+$g = new guest();
+$u = new user();
 
 ?>
 </body>
