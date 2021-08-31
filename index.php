@@ -54,17 +54,28 @@ echo "Time in australia for 5 days ".$e->futureTime."<br>";
 <p>Next class exercise</p>
 <?php
 require_once ("punkt.php");
-require_once ("punkt2d.php");
-$p = new punkt(40);
-
-echo $p->x.'<br>';
-
-$p2 = new punkt2d(10,50);
-
-echo $p2->x.'<br>';
-echo $p2->y.'<br>';
 
 
+$p = new punkt();
+
+$p->setX(70);
+echo 'Wartość X = :'.$p->getX().'<br>';
+
+$p2 = new punkt3d(10,50, 33);
+
+echo $p2->getX().'<br>';
+echo $p2->getY().'<br>';
+echo $p2->getZ().'<br>';
+
+
+?>
+<hr>
+<p>
+  Klasy abstrakcyjne
+</p>
+<br>
+<?php
+new Animal();
 
 ?>
 </body>
