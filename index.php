@@ -112,17 +112,28 @@ class monitorB implements Ekran, PrzyciskiInterface {
   {
     // TODO: Implement wlacz() method.
   }}
+echo "<hr>";
 ?>
 <hr>
+<br>
 <p>Statyczne funkcje<br></p>
 <?php
 require_once ("permissionInterface.php");
 require_once ("guest.php");
 require_once ("user.php");
+require_once ("moderator.php");
+require_once ("admin.php");
 
 $g = new guest();
 $u = new user();
+$m = new moderator();
+$a = new admin();
 
+echo var_dump($g->isPermitted(guest::DELETE_USER)).'<br>';
+
+//$g->isPermitted(guest::READ_POST); // sprawdzam czy ma pozowolenie
+
+echo var_dump(guest::checkPermission($u->getPermission(), permissionInterface::WRITE_POST));  // sprawdzam również czy guest ma pozwolenie na pisanie postów
 ?>
 </body>
 </html>

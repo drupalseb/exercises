@@ -1,6 +1,9 @@
 <?php
-require_once("permissionInterface.php");
+require_once("guestAbstract.php");
 
-class guest implements permissionInterface {
+class guest extends guestAbstract {
 
+  function __construct(){
+    $this->permission = permissionInterface::READ_POST;
+  }
 }
